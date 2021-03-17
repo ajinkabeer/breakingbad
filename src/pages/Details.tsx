@@ -1,13 +1,17 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import {
   fetchCharacterByIdThunk,
   characterSelector,
 } from '../store/slices/character';
+import Loading from '../components/Loading';
+import '../css/details.css';
 
 const Details = ({ match }) => {
-  const id = Number(match.params.slug);
+  const id = match.params.slug;
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     if (id) {
@@ -17,13 +21,20 @@ const Details = ({ match }) => {
 
   const { response, loading } = useSelector(characterSelector);
 
+  const backButtonHandler = () => {
+    history.goBack();
+  };
+
   if (loading) {
-    return <p>Loading..</p>;
+    return <Loading />;
   }
 
   return (
     <div>
-      <h3>Details</h3>
+      <button type="button" className="back-button" onClick={backButtonHandler}>
+        Back
+      </button>
+      <br />
       <code>{JSON.stringify(response)}</code>
     </div>
   );

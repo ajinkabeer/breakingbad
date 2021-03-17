@@ -1,12 +1,17 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import {
   fetchCharactersThunk,
   charactersSelector,
 } from '../store/slices/characters';
+import Character from '../components/Character';
+import Loading from '../components/Loading';
+import '../css/home.css';
 
 const Home = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(fetchCharactersThunk());
@@ -14,16 +19,29 @@ const Home = () => {
 
   const { response, loading } = useSelector(charactersSelector);
 
-  if (loading) {
-    return <p>Loading..</p>;
-  }
+  const onClickHandler = (id: number) => {
+    history.push(`/details/${id}`);
+  };
 
-  console.log(response);
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div>
-      <h3>Home</h3>
-      <code>{JSON.stringify(response)}</code>
+      <div className="grid-container">
+        {response?.map(({ char_id: id, name, nickname, img, portrayed }) => (
+          <Character
+            key={id}
+            id={id}
+            name={name}
+            nickname={nickname}
+            img={img}
+            portrayed={portrayed}
+            onClick={() => onClickHandler(id)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
