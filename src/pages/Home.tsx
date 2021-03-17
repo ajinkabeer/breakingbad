@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import {
   fetchCharactersThunk,
   charactersSelector,
+  filterResponse,
 } from '../store/slices/characters';
 import Character from '../components/Character';
 import Loader from '../components/Loader';
@@ -18,6 +19,12 @@ const Home = () => {
   }, [dispatch]);
 
   const { response, loading } = useSelector(charactersSelector);
+
+  useEffect(() => {
+    if (response) {
+      dispatch(filterResponse({ filterBy: 'name' }));
+    }
+  }, [response, dispatch]);
 
   const onClickHandler = (id: number) => {
     history.push(`/details/${id}`);

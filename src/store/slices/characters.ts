@@ -6,12 +6,14 @@ type CharactersType = {
   loading: boolean;
   error: boolean;
   response: CharactersResponseType[] | null;
+  initialResponse: CharactersResponseType[] | null;
 };
 
 const initialState: CharactersType = {
   loading: false,
   error: false,
   response: null,
+  initialResponse: null,
 };
 
 export const fetchCharactersThunk = createAsyncThunk(
@@ -29,7 +31,17 @@ export const fetchCharactersThunk = createAsyncThunk(
 const charactersSlice = createSlice({
   name: 'charactersSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    filterResponse(state, action) {
+      const { filterBy } = action.payload;
+      if (filterBy === 'name') {
+        const sorted = state.response
+          ?.slice()
+          .sort((a, b) => (a.name < b.name ? -1 : Number(a.name > b.name)));
+        state.response = sorted;
+      }
+    },
+  },
   extraReducers: {
     [fetchCharactersThunk.pending.type]: (state, action) => {
       state.loading = true;
@@ -42,9 +54,11 @@ const charactersSlice = createSlice({
     [fetchCharactersThunk.fulfilled.type]: (state, action) => {
       state.loading = false;
       state.response = action.payload;
+      state.initialResponse = action.payload;
     },
   },
 });
 
 export const charactersSelector = (state: any) => state.characters;
+export const { filterResponse } = charactersSlice.actions;
 export default charactersSlice.reducer;
