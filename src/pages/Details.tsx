@@ -5,12 +5,15 @@ import {
   characterSelector,
 } from '../store/slices/character';
 
-const Details = () => {
+const Details = ({ match }) => {
+  const id = Number(match.params.slug);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCharacterByIdThunk({ id: 1 }));
-  }, [dispatch]);
+    if (id) {
+      dispatch(fetchCharacterByIdThunk({ id }));
+    }
+  }, [dispatch, id]);
 
   const { response, loading } = useSelector(characterSelector);
 
