@@ -5,7 +5,7 @@ import {
   fetchCharacterByIdThunk,
   characterSelector,
 } from '../store/slices/character';
-import Loading from '../components/Loading';
+import Loader from '../components/Loader';
 import '../css/details.css';
 
 const Details = ({ match }) => {
@@ -26,7 +26,7 @@ const Details = ({ match }) => {
   };
 
   if (loading) {
-    return <Loading />;
+    return <Loader />;
   }
 
   return (

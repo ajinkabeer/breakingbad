@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    <a
+      data-testid="click-character"
+      role="button"
+      tabindex="1"
+    >
+      <img
+        alt="Name"
+        height="400"
+        src="test.png"
+      />
+      <div
+        class="card-container"
+      >
+        <div
+          class="card-title-container"
+        >
+          <h3>
+            Name
+          </h3>
+          <p>
+            test
+          </p>
+        </div>
+        <p>
+          test
+        </p>
+      </div>
+    </a>
+  </div>
+</DocumentFragment>
+`;

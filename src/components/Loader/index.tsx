@@ -1,9 +1,9 @@
 import './style.css';
 
-const Loading = () => (
+const Loader = () => (
   <div className="container">
     <p>Loading..</p>
   </div>
 );
 
-export default Loading;
+export default Loader;

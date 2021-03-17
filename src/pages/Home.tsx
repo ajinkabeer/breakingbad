@@ -6,7 +6,7 @@ import {
   charactersSelector,
 } from '../store/slices/characters';
 import Character from '../components/Character';
-import Loading from '../components/Loading';
+import Loader from '../components/Loader';
 import '../css/home.css';
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
   };
 
   if (loading) {
-    return <Loading />;
+    return <Loader />;
   }
 
   return (
