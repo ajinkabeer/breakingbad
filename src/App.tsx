@@ -1,13 +1,12 @@
 import { Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Details from './pages/Details';
+import Header from './components/Header';
 import './css/app.css';
 
 const App = () => (
   <div>
-    <header>
-      <h1>Breaking Bad</h1>
-    </header>
+    <Header />
     <div className="content">
       <Switch>
         <Route exact path="/" component={Home} />
