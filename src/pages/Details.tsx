@@ -18,10 +18,6 @@ const Details = () => {
     return <p>Loading..</p>;
   }
 
-  if (loading) {
-    return <p>Loading..</p>;
-  }
-
   return (
     <div>
       <h3>Details</h3>
