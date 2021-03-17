@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="content-container"
+    >
+      <img
+        alt="testName"
+        height="400"
+        src="test.png"
+      />
+    </div>
+    <div
+      class="content-container"
+    >
+      <p>
+        Name: 
+        <strong>
+          testName
+        </strong>
+      </p>
+      <p>
+        Nickname: 
+        <strong>
+          testnickname
+        </strong>
+      </p>
+      <p>
+        Birthday: 
+        <strong>
+          18-01-1995
+        </strong>
+      </p>
+      <p>
+        Portrayed by: 
+        <strong>
+          testactor
+        </strong>
+      </p>
+      <p>
+        Category: 
+        <strong>
+          testcategory
+        </strong>
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
