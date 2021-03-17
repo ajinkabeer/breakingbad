@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, AsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import fetchCharacters from '../../api/characters';
 import { CharactersResponseType } from './types';
 
@@ -14,18 +14,17 @@ const initialState: CharactersType = {
   response: null,
 };
 
-export const fetchCharactersThunk: AsyncThunk<
-  unknown,
-  void,
-  {}
-> = createAsyncThunk('fetch/characters', async () => {
-  try {
-    const response = await fetchCharacters();
-    return response.data;
-  } catch (error) {
-    return error;
+export const fetchCharactersThunk = createAsyncThunk(
+  'fetch/characters',
+  async () => {
+    try {
+      const response = await fetchCharacters();
+      return response.data;
+    } catch (error) {
+      return error;
+    }
   }
-});
+);
 
 const charactersSlice = createSlice({
   name: 'charactersSlice',
@@ -47,5 +46,5 @@ const charactersSlice = createSlice({
   },
 });
 
-export const searchResultsSelector = (state: any) => state.characters;
+export const charactersSelector = (state: any) => state.characters;
 export default charactersSlice.reducer;

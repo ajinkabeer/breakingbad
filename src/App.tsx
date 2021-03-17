@@ -1,4 +1,4 @@
-const App: () => JSX.Element = () => (
+const App = () => (
   <div>
     <header>
       <h1>Breaking Bad</h1>
