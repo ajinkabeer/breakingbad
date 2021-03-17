@@ -2,4 +2,7 @@ import apiClient from './client';
 
 const fetchCharacters = () => apiClient.get('/characters');
 
-export default fetchCharacters;
+const fetchCharacterById = ({ id }: { id: number }) =>
+  apiClient.get(`characters/${id}`);
+
+export { fetchCharacters, fetchCharacterById };

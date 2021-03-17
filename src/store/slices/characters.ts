@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import fetchCharacters from '../../api/characters';
+import { fetchCharacters } from '../../api/characters';
 import { CharactersResponseType } from './types';
 
 type CharactersType = {
   loading: boolean;
   error: boolean;
-  response: CharactersResponseType | null;
+  response: CharactersResponseType[] | null;
 };
 
 const initialState: CharactersType = {
