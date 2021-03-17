@@ -18,6 +18,8 @@ const Home = () => {
     return <p>Loading..</p>;
   }
 
+  console.log(response);
+
   return (
     <div>
       <h3>Home</h3>
