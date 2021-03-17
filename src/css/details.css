@@ -5,6 +5,8 @@ button {
   border: none;
   border-radius: 8px;
   margin-bottom: 16px;
+  background-color: #f1f1f1;
+  color: black;
 }
 
 button:hover {
@@ -12,7 +14,8 @@ button:hover {
   color: black;
 }
 
-.back-button {
-  background-color: #f1f1f1;
-  color: black;
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

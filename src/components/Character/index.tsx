@@ -5,11 +5,10 @@ interface Props {
   name: string;
   img: string;
   portrayed: string;
-  nickname: string;
   onClick: () => void;
 }
 
-const Character = ({ id, name, img, portrayed, nickname, onClick }: Props) => (
+const Character = ({ id, name, img, portrayed, onClick }: Props) => (
   <div className="card">
     <a
       onClick={onClick}
@@ -24,7 +23,6 @@ const Character = ({ id, name, img, portrayed, nickname, onClick }: Props) => (
           <h3>{name}</h3>
           <p>{portrayed}</p>
         </div>
-        <p>{nickname}</p>
       </div>
     </a>
   </div>

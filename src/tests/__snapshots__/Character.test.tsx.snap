@@ -28,9 +28,6 @@ exports[`Character Component matches snapshot 1`] = `
             test
           </p>
         </div>
-        <p>
-          test
-        </p>
       </div>
     </a>
   </div>

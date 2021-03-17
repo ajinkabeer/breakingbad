@@ -6,10 +6,9 @@ const props = {
   name: 'Name',
   img: 'test.png',
   portrayed: 'test',
-  nickname: 'test',
   onClick: jest.fn(),
 };
-const { id, name, img, portrayed, nickname, onClick } = props;
+const { id, name, img, portrayed, onClick } = props;
 
 describe('Character Component', () => {
   it('matches snapshot', () => {
@@ -18,7 +17,6 @@ describe('Character Component', () => {
         key={id}
         id={id}
         name={name}
-        nickname={nickname}
         img={img}
         portrayed={portrayed}
         onClick={onClick}
@@ -32,7 +30,6 @@ describe('Character Component', () => {
         key={id}
         id={id}
         name={name}
-        nickname={nickname}
         img={img}
         portrayed={portrayed}
         onClick={onClick}

@@ -6,6 +6,7 @@ import {
   characterSelector,
 } from '../store/slices/character';
 import Loader from '../components/Loader';
+import CharacterDetails from '../components/CharacterDetails';
 import '../css/details.css';
 
 const Details = ({ match }) => {
@@ -30,12 +31,25 @@ const Details = ({ match }) => {
   }
 
   return (
-    <div>
-      <button type="button" className="back-button" onClick={backButtonHandler}>
+    <div style={{ flex: 1 }}>
+      <button type="button" onClick={backButtonHandler}>
         Back
       </button>
-      <br />
-      <code>{JSON.stringify(response)}</code>
+      <div className="content">
+        {response?.map(
+          ({ char_id, img, name, nickname, birthday, portrayed, category }) => (
+            <CharacterDetails
+              key={char_id}
+              img={img}
+              name={name}
+              nickname={nickname}
+              birthday={birthday}
+              portrayed={portrayed}
+              category={category}
+            />
+          )
+        )}
+      </div>
     </div>
   );
 };
