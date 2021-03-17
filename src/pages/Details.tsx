@@ -23,7 +23,7 @@ const Details = ({ match }) => {
   const { response, loading } = useSelector(characterSelector);
 
   const backButtonHandler = () => {
-    history.goBack();
+    history.replace("/")
   };
 
   if (loading) {
