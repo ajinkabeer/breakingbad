@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/breakingbad/static/css/main.bb676e36.chunk.css",
-    "main.js": "/breakingbad/static/js/main.931dfc76.chunk.js",
-    "main.js.map": "/breakingbad/static/js/main.931dfc76.chunk.js.map",
-    "runtime-main.js": "/breakingbad/static/js/runtime-main.2eca9be4.js",
-    "runtime-main.js.map": "/breakingbad/static/js/runtime-main.2eca9be4.js.map",
-    "static/js/2.c3830897.chunk.js": "/breakingbad/static/js/2.c3830897.chunk.js",
-    "static/js/2.c3830897.chunk.js.map": "/breakingbad/static/js/2.c3830897.chunk.js.map",
+    "main.css": "/breakingbad/static/css/main.17b6daca.chunk.css",
+    "main.js": "/breakingbad/static/js/main.cc1060d2.chunk.js",
+    "main.js.map": "/breakingbad/static/js/main.cc1060d2.chunk.js.map",
+    "runtime-main.js": "/breakingbad/static/js/runtime-main.a8ab02f2.js",
+    "runtime-main.js.map": "/breakingbad/static/js/runtime-main.a8ab02f2.js.map",
+    "static/js/2.f46d30ca.chunk.js": "/breakingbad/static/js/2.f46d30ca.chunk.js",
+    "static/js/2.f46d30ca.chunk.js.map": "/breakingbad/static/js/2.f46d30ca.chunk.js.map",
     "index.html": "/breakingbad/index.html",
-    "static/css/main.bb676e36.chunk.css.map": "/breakingbad/static/css/main.bb676e36.chunk.css.map",
-    "static/js/2.c3830897.chunk.js.LICENSE.txt": "/breakingbad/static/js/2.c3830897.chunk.js.LICENSE.txt"
+    "static/css/main.17b6daca.chunk.css.map": "/breakingbad/static/css/main.17b6daca.chunk.css.map",
+    "static/js/2.f46d30ca.chunk.js.LICENSE.txt": "/breakingbad/static/js/2.f46d30ca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2eca9be4.js",
-    "static/js/2.c3830897.chunk.js",
-    "static/css/main.bb676e36.chunk.css",
-    "static/js/main.931dfc76.chunk.js"
+    "static/js/runtime-main.a8ab02f2.js",
+    "static/js/2.f46d30ca.chunk.js",
+    "static/css/main.17b6daca.chunk.css",
+    "static/js/main.cc1060d2.chunk.js"
   ]
 }
