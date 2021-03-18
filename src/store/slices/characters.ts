@@ -34,11 +34,20 @@ const charactersSlice = createSlice({
   reducers: {
     filterResponse(state, action) {
       const { filterBy } = action.payload;
-      if (filterBy === 'name') {
-        const sorted = state.response
-          ?.slice()
-          .sort((a, b) => (a.name < b.name ? -1 : Number(a.name > b.name)));
-        state.response = sorted;
+      switch (filterBy) {
+        case 'name': {
+          const sorted = state.response
+            ?.slice()
+            .sort((a, b) => (a.name < b.name ? -1 : Number(a.name > b.name)));
+          state.response = sorted;
+          break;
+        }
+        case 'none': {
+          state.response = state.initialResponse;
+          break;
+        }
+        default:
+          break;
       }
     },
   },

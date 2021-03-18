@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import {
@@ -9,10 +9,13 @@ import {
 import Character from '../components/Character';
 import Loader from '../components/Loader';
 import '../css/home.css';
+import Filter from '../components/Filter';
 
 const Home = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const [filterBy, setFilterBy] = useState<string>('none');
 
   useEffect(() => {
     dispatch(fetchCharactersThunk());
@@ -21,14 +24,19 @@ const Home = () => {
   const { response, loading } = useSelector(charactersSelector);
 
   useEffect(() => {
-    if (response) {
-      dispatch(filterResponse({ filterBy: 'name' }));
-    }
-  }, [response, dispatch]);
+    dispatch(filterResponse({ filterBy }));
+  }, [filterBy, dispatch]);
 
-  const onClickHandler = (id: number) => {
-    history.push(`/details/${id}`);
-  };
+  const onClickHandler = useCallback(
+    (id: number) => {
+      history.push(`/details/${id}`);
+    },
+    [history]
+  );
+
+  const onFilterChange = useCallback((e) => {
+    setFilterBy(e.target.value);
+  }, []);
 
   if (loading) {
     return <Loader />;
@@ -36,6 +44,7 @@ const Home = () => {
 
   return (
     <div>
+      <Filter onChange={onFilterChange} value={filterBy} />
       <div className="grid-container">
         {response?.map(({ char_id: id, name, img, portrayed }) => (
           <Character
