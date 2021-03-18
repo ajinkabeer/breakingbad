@@ -20,9 +20,9 @@ jobs:
     - name: Run tests
       run: npm test
     - name: Run prettier
-      run: npm format
+      run: npm run format
     - name: Run linter
-      run: npm lint
+      run: npm run lint
     - name: Build page
       run: npm run build
     - name: Deploy to gh-pages
