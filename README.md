@@ -1,5 +1,7 @@
 # Breaking Bad Characters [![Deployment](https://github.com/ajinkabeer/breakingbad/actions/workflows/deploy.yaml/badge.svg?branch=master)](https://github.com/ajinkabeer/breakingbad/actions/workflows/deploy.yaml)
 
+This is a simple React project that uses the [BreakingBadAPI](https://breakingbadapi.com/documentation) to display the characters and character details from the TV series Breaking Bad.
+
 - [App-Live-Link](https://ajinkabeer.github.io/breakingbad/#/)
 
 The project uses:
