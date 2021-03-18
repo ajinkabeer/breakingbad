@@ -1,6 +1,6 @@
-# Breaking Bad Characters
+# Breaking Bad Characters [![Deployment](https://github.com/ajinkabeer/breakingbad/actions/workflows/deploy.yaml/badge.svg?branch=master)](https://github.com/ajinkabeer/breakingbad/actions/workflows/deploy.yaml)
 
-- [App-Live-Link]()
+- [App-Live-Link](https://ajinkabeer.github.io/breakingbad/#/)
 
 The project uses:
 
@@ -9,7 +9,7 @@ The project uses:
 -   [TypeScript](https://www.typescriptlang.org/docs/home.html) for type-safety.
 -   [Redux Toolkit](https://redux.js.org/api/api-reference) for state management and handling side effects.
     Takes inspiration from libraries like Immer and Autodux to let you write "mutative" immutable update logic, and even create entire "slices" of state automatically.
--   [GitHub Actions and Github Pages]() for Continuous Deployment.
+-   [GitHub Actions and Github Pages](https://github.com/ajinkabeer/breakingbad/actions) for Continuous Deployment.
 
 ## Structure of the project
 
